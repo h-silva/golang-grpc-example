@@ -1,8 +1,9 @@
 syntax = "proto3";
 
-package api.pb;
+package field;
 
-option go_package = "/api/pb";
+option go_package = "/field";
+option java_package = "/api/generated/java/field";
 
 message FieldRequest {
   int64 farm = 1;
