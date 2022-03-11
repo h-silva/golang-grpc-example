@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package api.pb;
+
+option go_package = "/api/pb";
+
+message FieldRequest {
+  int64 farm = 1;
+  int64 zone = 2;
+  int64 field = 3;
+}
+
+message FieldCode {
+    int64 id = 1;
+}
+
+message FieldResponse {
+  int64 status = 1;
+  FieldRequest fieldRequest = 2;
+}
+
+service FieldService {
+ 
+  rpc Create (FieldRequest) returns (FieldResponse){}
+
+  rpc Get(FieldCode) returns (FieldResponse){}
+  
+}
